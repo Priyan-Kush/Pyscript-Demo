@@ -14,7 +14,26 @@
 <body>
     <h1> DOM Manipulation in pyscript</h1>
     <h2> String counter using Python 🎏</h2>
+    <br>
+    <textarea name="input_text" id="input_text" placeholder="Enter your text"></textarea>
+    <p>Input Text</p>
+    <br>
 
-
+<button id="run" type="button" class="button is-primary" pys-onClick="count">Count</button>
+<button id="clear" type="button" class="button is-danger" pys-onClick="clear">Clear</button>
+<p>Output from Python 🐍</p>
+ 
 </body>
+<pyscript>
+    input_text= Element("input_text")
+    op = Element("output")
+
+    def clear(*args, **kwargs):
+        input_text.clear()
+    
+    def count(* args **kwargs):
+        number = len(input_text.value)
+        op.write(number)
+
+</pyscript>
 </html>
