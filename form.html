@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+    <title> From Using Pyscript</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+
+    <body>
+        <form onsubmit="return False">
+        <label for ="name"> Name: </label></br>
+        <input type="text" id="name" name ="name" value="Person"><br> 
+
+        <select name = "countries" id="countries">
+            <option value = "India"> India</option>
+            <option value = "Pakistan"> Pakistan</option>
+            <option value = "Sri Lanka"> Sri Lanka</option>
+            <option value = "Nepal"> Nepal</option>
+            <option value = "Bangladesh"> Bangladesh</option>
+        </select>
+
+        <input py-click="sub" type="submit" id="btn-form" value="submit"> 
+        </form>
+        <p>Output: </p>
+        <p id="output"></p>
+
+        <pyscript>
+            
+            def sub(*args, **kwargs):
+                result = Element('Output')
+                result.write(f"{Element('name').value}has been entered from {Element('countries').value})
+
+        </pyscript>
+    </body>
+</head>
