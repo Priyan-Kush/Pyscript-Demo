@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+<body>
+
+    <title> CSV Reading </title>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+    <py-env>
+        - pandas
+    </py-env>
+    <p id ='csv'></p>
+
+        <py-script>
+
+            import pandas as pd 
+    
+            from pyodide.http import open_url
+    
+            url_content = open_url("https://raw.githubusercontent.com/Priyan-Kush/Pyscript-Demo/main/ginf.csv")
+    
+            df = pd.read_csv(url_content)
+    
+            #print(df)
+            
+            csv = Element('csv')
+    
+            csv.write(df.head())
+    
+        </py-script>
+    
+    </body>
+
+</head>
+
+</html>
